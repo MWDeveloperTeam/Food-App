@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { GoLocation } from "react-icons/go";
@@ -32,6 +32,14 @@ const Home = () => {
     { item1: "Burgur", item2: "1.2", rating: 4.9, min: 10, ratingTitle: 'Contact' },
     { item1: "Burgur", item2: "1.2", rating: 4.9, min: 10, ratingTitle: 'Contact' },
   ];
+
+  useEffect(() => {
+    const windowLoader = () => {
+      window.scrollTo(0, 0);
+    }
+    
+    windowLoader()
+      }, [])
 
   return (
     <Fragment>

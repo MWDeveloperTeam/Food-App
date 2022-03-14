@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Constant } from "../../constants";
 import choiceBannerImg from "../../media/choiceBanner.jpg";
@@ -21,6 +21,14 @@ const FoodChoiceIndex = () => {
   const showFoodModel = () => {
     setFoodModel(!foodModel);
   };
+
+  useEffect(() => {
+    const windowLoader = () => {
+      window.scrollTo(0, 0);
+    };
+
+    windowLoader();
+  }, []);
 
   return (
     <Section>

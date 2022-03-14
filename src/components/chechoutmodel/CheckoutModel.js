@@ -1,10 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { HiCheck } from "react-icons/hi";
-
 import { Constant } from "../../constants";
 import { Link } from "react-router-dom";
-
 const { Colors, Flex, CardListStyle, Fonts } = Constant;
 
 const CheckoutModel = () => {
@@ -24,7 +22,7 @@ const CheckoutModel = () => {
           </p>
         </div>
         <div className="link_div">
-          <Link to="/open">keep browsing food</Link>
+          <Link to="/">keep browsing food</Link>
         </div>
       </div>
     </Section>

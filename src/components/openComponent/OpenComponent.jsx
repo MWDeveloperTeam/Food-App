@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import bannerImage from "../../media/openBanner.jpg";
 import { BsFillBookmarkFill, BsDot, BsFillStopwatchFill } from "react-icons/bs";
@@ -11,22 +11,34 @@ import CardList from "./CardList";
 import SelectFood from "../selectFoodModal/SelectFood";
 import CommonNav from "../CommonNav";
 
-const { Fonts, Colors, Flex,  } = Constant;
+const { Fonts, Colors, Flex } = Constant;
 const OpenComponent = () => {
-  const exampleApi = [1,2,3,4,5,6] 
+  const exampleApi = [1, 2, 3, 4, 5, 6];
 
   const [count, setcount] = useState(false);
-  const getCardValue = (value) =>{
-    setcount(value)
+  const getCardValue = (value) => {
+    setcount(value);
+  };
 
-    
-  }
+  useEffect(() => {
+    const windowLoader = () => {
+      window.scrollTo(0, 0);
+    };
 
+    windowLoader();
+  }, []);
 
   return (
-    <Section >
+    <Section>
       <div className="open_banner">
-      <CommonNav style={{position:'absolute'}} iconColor="#000" pagelink="/" icon={<BsSearch/>} icon1={<FaRegShareSquare/>} fucn={()=> console.log()}/>
+        <CommonNav
+          style={{ position: "absolute" }}
+          iconColor="#000"
+          pagelink="/"
+          icon={<BsSearch />}
+          icon1={<FaRegShareSquare />}
+          fucn={() => console.log()}
+        />
         <img src={bannerImage} alt="" />
       </div>
       <div className="open_container">
@@ -59,7 +71,7 @@ const OpenComponent = () => {
               <BsFillStopwatchFill className="thirty_min_icon" />
               <span>thirty min</span>
             </div>
-            <div className="take_away" >take away</div>
+            <div className="take_away">take away</div>
           </div>
         </div>
         <div className="food_choice">
@@ -82,17 +94,12 @@ const OpenComponent = () => {
           </ul>
         </div>
         <div className="open_container_card">
-        {
-        exampleApi.map((ex,i) =>
-        <CardList value={getCardValue} key={i}/>
-
-        )
-        }
-         
-          
+          {exampleApi.map((ex, i) => (
+            <CardList value={getCardValue} key={i} />
+          ))}
         </div>
       </div>
-      {count && <SelectFood value={getCardValue}/>}
+      {count && <SelectFood value={getCardValue} />}
     </Section>
   );
 };
@@ -115,7 +122,7 @@ const Section = styled.section`
     position: relative;
     top: -3rem;
     background-color: #fff;
-    border-radius: 3rem 3rem 0 0 ;
+    border-radius: 3rem 3rem 0 0;
     padding: 2rem;
 
     .container_heading_div {

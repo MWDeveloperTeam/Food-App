@@ -3,10 +3,12 @@ import styled from "styled-components";
 import { CgTag } from "react-icons/cg";
 import { IoIosArrowForward } from "react-icons/io";
 import { Constant } from "../constants";
+import CheckoutModel from "./chechoutmodel/CheckoutModel";
 const { Fonts, Colors } = Constant;
 
 const PromoCode = () => {
   const [promoToggle, setPromoToggle] = useState(false);
+  const [open, setOpen] = useState(false)
 
   const Toggle = () => {
     setPromoToggle(!promoToggle)
@@ -26,7 +28,8 @@ const PromoCode = () => {
         </div>
         <div className="search_container" style={promoToggle ? {display: 'inherit'}: null}>
           <input type="text" placeholder="Enter Promo Code"/>
-          <button>Apply</button>
+          <button onClick={() => setOpen(true)}>Apply</button>
+          {open && <CheckoutModel/>}
         </div>
       </div>
     </Section>

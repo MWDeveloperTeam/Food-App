@@ -24,6 +24,7 @@ import Filter from "./components/filter/Filter";
 import Reviews from "./components/reviews/Revivews";
 import UserProfile from "./components/UserProfile/UserProfile";
 import { Constant } from "./constants";
+import CheckOut from "./components/CheckOut";
 const { Fonts, } = Constant;
 
 const App = () => {
@@ -44,6 +45,7 @@ const App = () => {
           <Route path="/filterrestaurant" element={<FilterRestaurant />} />
           <Route path="/orders" element={<PreOrder />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/checkout" element={<CheckOut />} />
 
           {/* Muneeb Router Files */}
           <Route path="/open" element={<OpenComponent />} />

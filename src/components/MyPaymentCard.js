@@ -92,11 +92,11 @@ const MyPaymentCard = () => {
             <label htmlFor="credential">Save my credentials</label>
           </div>
         </div>
-        <Link to="">
           <div className="add_card_button">
+            <Link to='/mycart'>
             <button>Add Card</button>
+            </Link>
           </div>
-        </Link>
       </div>
       <div style={{ height: "2rem" }}></div>
     </Section>
@@ -112,7 +112,9 @@ const Section = styled.section`
 
     .add_card_button {
       margin-top: 0.6rem;
-      button {
+     a{
+       width: 100%;
+       button {
         width: 100%;
         height: 2.5rem;
         border: none;
@@ -126,6 +128,7 @@ const Section = styled.section`
           background-color: ${Colors.secondaryColor};
         }
       }
+     }
     }
   }
 

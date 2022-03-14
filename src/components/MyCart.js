@@ -11,7 +11,7 @@ const { Fonts, Colors } = Constant;
 const MyCart = () => {
   const {toggle, setToggle} = useContext(Store)
   const [itemValue, setItemValue] = useState(0);
-console.log(toggle);
+
   const getItemValue = (e) => {
     setItemValue(e)
   };
@@ -20,13 +20,6 @@ console.log(toggle);
   return (
     <Section>
       <CommonNav title="My Cart" color="#000" icon={<IoNotificationsOutline />} fucn={()=> console.log('My Cart ')} pagelink='/choice'/>
-      {/* {example.map((exam, i) => (
-        <div key={i}>
-          <div>15</div>
-          <h1>{itemValue}</h1>
-          <IncreDecrement valueFunc={getItemValue}/>
-        </div>
-      ))} */}
       <CheckoutCart/>
     </Section>
   );

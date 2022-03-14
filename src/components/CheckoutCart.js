@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import styled from "styled-components";
 import { images } from "../ImagesApi";
 import IncreDecrement from "./IncreDecrement";
@@ -16,6 +16,14 @@ const CheckoutCart = () => {
   const ToggleHandler = () => {
     setToggle(true);
   };
+
+  useEffect(() => {
+const windowLoader = () => {
+  window.scrollTo(0, 0);
+}
+
+windowLoader()
+  }, [])
   return (
     <>
       {images.map((img, i) => (

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { IoChevronBack } from "react-icons/io5";
 import { Constant } from "../../constants";
@@ -12,6 +12,13 @@ import CommonNav from "../CommonNav";
 const { Fonts, Flex, ButtonP } = Constant;
 
 const PaymentMethod = () => {
+  useEffect(() => {
+    const windowLoader = () => {
+      window.scrollTo(0, 0);
+    };
+
+    windowLoader();
+  }, []);
   return (
     <Section>
       <CommonNav title="add a payment method" color="#000"  fucn={()=> console.log('My Cart ')} pagelink='/mycart'/>
